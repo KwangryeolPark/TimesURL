@@ -13,7 +13,7 @@ TimesURL 모델의 학습 손실 함수(loss function)는 두 가지 주요 구�
 
 ### 코드 구현 위치
 
-파일: `src/timesurl.py`, 줄 234-239
+파일: `src/timesurl.py`, 줄 240-245
 
 ```python
 if torch.sum(mask1_inter) > 0:
@@ -77,7 +77,7 @@ loss += 1 * MSE(original, reconstructed) / 2
 
 Reconstruction loss의 가중치를 변경하고 싶다면:
 
-1. `src/timesurl.py`의 234, 238번째 줄 수정
+1. `src/timesurl.py`의 241, 244번째 줄 수정
 2. `1 *`을 원하는 가중치 값으로 변경
 3. 또는 새로운 커맨드 라인 인자 추가 (예: `--recon_coeff`)
 
