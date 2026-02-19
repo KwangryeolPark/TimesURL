@@ -25,6 +25,8 @@ This document provides a comprehensive overview of all hyperparameters used for 
 | `--temp` | float | 1.0 | Temperature for contrastive loss |
 | `--lmd` | float | 0.01 | Lambda weight for hierarchical contrastive loss |
 
+**Note**: While the contrastive loss weight (`--lmd`) is adjustable, the reconstruction loss coefficient is hardcoded to 1 in the codebase. For more details, see [RECONSTRUCTION_LOSS_COEFFICIENT.md](RECONSTRUCTION_LOSS_COEFFICIENT.md).
+
 ### 1.3 Masking Parameters (for Reconstruction Task)
 
 | Hyperparameter | Type | Default | Description |
