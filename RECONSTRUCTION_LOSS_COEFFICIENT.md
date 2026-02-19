@@ -77,7 +77,7 @@ loss += 1 * MSE(original, reconstructed) / 2
 
 Reconstruction loss의 가중치를 변경하고 싶다면:
 
-1. `src/timesurl.py`의 241, 244번째 줄 수정
+1. `src/timesurl.py`의 241-242, 244-245번째 줄 수정
 2. `1 *`을 원하는 가중치 값으로 변경
 3. 또는 새로운 커맨드 라인 인자 추가 (예: `--recon_coeff`)
 
