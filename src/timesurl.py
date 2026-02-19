@@ -224,6 +224,8 @@ class TimesURL:
                     mask1, mask2 = mask1[:, -crop_l:], mask2[:, :crop_l]
                     mask1_inter, mask2_inter = mask1_inter[:, -crop_l:], mask2_inter[:, :crop_l]
 
+                    # Contrastive loss with adjustable coefficient (lambda, default: 0.01)
+                    # This loss learns time series representations through contrastive learning
                     loss += self.args.lmd * hierarchical_contrastive_loss(
                         out1,
                         out2,
@@ -231,6 +233,10 @@ class TimesURL:
                         temp=temp
                     )
 
+                    # Reconstruction loss with fixed coefficient = 1
+                    # This loss learns to reconstruct masked time intervals
+                    # The coefficient is hardcoded to 1 as it provides stable training
+                    # and the reconstruction loss is already normalized via MSE
                     if torch.sum(mask1_inter) > 0:
                         loss += 1 * torch.sum(torch.pow((x_left[..., :-1] - left_recon) * mask1_inter, 2)) / (
                                 torch.sum(mask1_inter) + 1e-10) / 2

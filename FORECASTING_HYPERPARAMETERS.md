@@ -43,6 +43,8 @@ Pretrain 단계는 TimesURL 모델을 학습하는 단계입니다 (src/timesurl
 | `--segment_num` | int | 3 | 마스킹할 시간 구간(segment) 개수 |
 | `--mask_ratio_per_seg` | float | 0.05 | 각 segment에서 마스킹할 시퀀스 길이의 비율 |
 
+**참고**: Reconstruction loss의 가중치(coefficient)는 코드에 1로 고정되어 있습니다. 자세한 내용은 [RECONSTRUCTION_LOSS_COEFFICIENT.md](RECONSTRUCTION_LOSS_COEFFICIENT.md)를 참조하세요.
+
 ### 1.4 데이터 관련 파라미터
 
 | Hyperparameter | Type | Default | 설명 |

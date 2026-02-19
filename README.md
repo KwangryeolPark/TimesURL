@@ -12,6 +12,7 @@ Appendix: [Appendix](https://github.com/Alrash/TimesURL/blob/main/AAAI24_appendi
 - **Quick Reference**: [Forecasting Hyperparameters Quick Reference](FORECASTING_HYPERPARAMETERS_QUICK_REF.md) - 데이터셋별 hyperparameter 요약표 및 명령어 예시
 - [Forecasting Hyperparameters (Korean)](FORECASTING_HYPERPARAMETERS.md): forecasting task에 대한 모든 hyperparameter 정리
 - [Forecasting Hyperparameters (English)](FORECASTING_HYPERPARAMETERS_EN.md): Comprehensive documentation of all hyperparameters for forecasting tasks
+- [Reconstruction Loss Coefficient](RECONSTRUCTION_LOSS_COEFFICIENT.md): Reconstruction loss의 coefficient(가중치)에 대한 상세 설명
 
 ## Codes
 This code is based on [TS2Vec](https://github.com/yuezhihan/ts2vec).

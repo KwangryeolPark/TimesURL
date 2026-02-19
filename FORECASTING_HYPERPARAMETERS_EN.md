@@ -32,6 +32,8 @@ This document provides a comprehensive overview of all hyperparameters used for 
 | `--segment_num` | int | 3 | Number of time interval segments to mask |
 | `--mask_ratio_per_seg` | float | 0.05 | Fraction of sequence length to mask per segment |
 
+**Note**: The reconstruction loss coefficient is hardcoded to 1 in the codebase. For more details, see [RECONSTRUCTION_LOSS_COEFFICIENT.md](RECONSTRUCTION_LOSS_COEFFICIENT.md).
+
 ### 1.4 Data-Related Parameters
 
 | Hyperparameter | Type | Default | Description |
