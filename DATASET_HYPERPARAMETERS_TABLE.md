@@ -33,13 +33,15 @@ TimesURL의 forecasting task는 **Pretrain**과 **Finetune** 두 단계로 구�
 
 | Dataset | 학습 방법 | "Learning Rate" | "Batch Size" | Alpha (Regularization) | Encoding Batch Size |
 |---------|----------|----------------|-------------|----------------------|-------------------|
-| **ETTh1** | Ridge Regression | N/A (closed-form solution) | N/A (전체 데이터 사용*) | Grid Search로 자동 선택 | 256 |
-| **ETTh2** | Ridge Regression | N/A (closed-form solution) | N/A (전체 데이터 사용*) | Grid Search로 자동 선택 | 256 |
-| **ETTm1** | Ridge Regression | N/A (closed-form solution) | N/A (전체 데이터 사용*) | Grid Search로 자동 선택 | 256 |
-| **ETTm2** | Ridge Regression | N/A (closed-form solution) | N/A (전체 데이터 사용*) | Grid Search로 자동 선택 | 256 |
-| **electricity** | Ridge Regression | N/A (closed-form solution) | N/A (전체 데이터 사용*) | Grid Search로 자동 선택 | 256 |
-| **weather (WTH)** | Ridge Regression | N/A (closed-form solution) | N/A (전체 데이터 사용*) | Grid Search로 자동 선택 | 256 |
-| **traffic** | Ridge Regression | N/A (closed-form solution) | N/A (전체 데이터 사용*) | Grid Search로 자동 선택 | 256 |
+| **ETTh1** | Ridge Regression | N/A (closed-form solution) | N/A (전체 데이터 사용†) | Grid Search로 자동 선택 | 256 |
+| **ETTh2** | Ridge Regression | N/A (closed-form solution) | N/A (전체 데이터 사용†) | Grid Search로 자동 선택 | 256 |
+| **ETTm1** | Ridge Regression | N/A (closed-form solution) | N/A (전체 데이터 사용†) | Grid Search로 자동 선택 | 256 |
+| **ETTm2** | Ridge Regression | N/A (closed-form solution) | N/A (전체 데이터 사용†) | Grid Search로 자동 선택 | 256 |
+| **electricity** | Ridge Regression | N/A (closed-form solution) | N/A (전체 데이터 사용†) | Grid Search로 자동 선택 | 256 |
+| **weather (WTH)** | Ridge Regression | N/A (closed-form solution) | N/A (전체 데이터 사용†) | Grid Search로 자동 선택 | 256 |
+| **traffic** | Ridge Regression | N/A (closed-form solution) | N/A (전체 데이터 사용†) | Grid Search로 자동 선택 | 256 |
+
+**† Note**: 샘플 수가 100,000개를 초과하는 경우 자동으로 서브샘플링됩니다.
 
 **참고사항:**
 - Finetune 단계는 전통적인 gradient descent 방식의 학습을 사용하지 않습니다
@@ -91,9 +93,9 @@ Finetune 단계는 **전통적인 neural network 학습 방식과 다릅니다**
 
 | 항목 | 파일 | 설명 |
 |-----|------|------|
-| Pretrain hyperparameters | `src/train.py` (line 27-50) | Command-line arguments 정의 |
-| Finetune encoding | `src/tasks/forecasting.py` (line 21-32) | Encoding 시 batch_size=256 사용 |
-| Ridge regression | `src/tasks/_eval_protocols.py` (line 81-109) | Alpha grid search 및 학습 |
+| Pretrain hyperparameters | `src/train.py` | Command-line arguments 정의 |
+| Finetune encoding | `src/tasks/forecasting.py` | Encoding 시 batch_size=256 사용 |
+| Ridge regression | `src/tasks/_eval_protocols.py` | Alpha grid search 및 학습 (fit_ridge 함수) |
 
 ## 사용 예시
 
